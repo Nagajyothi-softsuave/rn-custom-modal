@@ -1,8 +1,8 @@
 {
-  "name": "sample-new-modal",
-  "version": "0.0.2",
+  "name": "rn-custom-modal",
+  "version": "0.0.1",
   "main": "src/index.js",
-  "types": "src/types/sample-new-modal.d.ts",
+  "types": "src/types/rn-custom-modal.d.ts",
   "private": false,
   "scripts": {
     "android": "react-native run-android",
@@ -21,7 +21,7 @@
     "react": "19.1.0",
     "react-native": "0.80.0",
     "react-native-responsive-screen": "^1.4.2",
-    "sample-new-modal": "^0.0.2"
+    "rn-custom-modal":"0.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

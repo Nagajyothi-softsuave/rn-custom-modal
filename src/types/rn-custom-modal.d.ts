@@ -1,4 +1,4 @@
-declare module 'sample-new-modal' {
+declare module 'rn-custom-modal' {
   import { FC, ReactNode } from 'react';
   import { StyleProp, ViewStyle, ImageSourcePropType } from 'react-native';
 
