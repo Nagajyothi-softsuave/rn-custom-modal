@@ -1,18 +1,27 @@
 {
-  "name": "RNModal",
-  "version": "0.0.1",
-  "private": true,
+  "name": "sample-new-modal",
+  "version": "0.0.2",
+  "main": "src/index.js",
+  "types": "src/types/sample-new-modal.d.ts",
+  "private": false,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc"
   },
+  "files": [
+    "src",
+    "README.md"
+  ],
   "dependencies": {
+    "@react-native/new-app-screen": "0.80.0",
     "react": "19.1.0",
     "react-native": "0.80.0",
-    "@react-native/new-app-screen": "0.80.0"
+    "react-native-responsive-screen": "^1.4.2",
+    "sample-new-modal": "^0.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

@@ -1,97 +1,103 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# RNCustomModal
 
-# Getting Started
+The rn-custom-modal package provides a customizable and reusable CustomModal component for React Native applications. Designed to simplify the creation of modal-based bottom sheets, it offers a clean and flexible way to display prompts, menus, actions, and other modal content in your app.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+# RNCustomModal Example
 
-## Step 1: Start Metro
+## Installation
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
+Download the package with npm or yarn
 
 ```sh
 # Using npm
-npm start
+npm i rn-custom-modal
 
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+## Usage
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```js
+  import CustomModal from "rn-custom-modal";
 ```
 
-### iOS
+```jsx
+  const [isVisible, setIsVisible] = useState(false);
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+  const handleOpenModal = () => setIsVisible(true);
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+  const handleCloseModal = () => setIsVisible(false);
 
-```sh
-bundle install
+  <Text onPress={handleOpenModal}>Open Custom Modal</Text>
+
+   <CustomModal
+      title="Sheet Title"
+      isModalVisible={isVisible}
+      onCloseModal={handleCloseModal}
+      showCloseButton={true}
+      renderModalContent={() => (
+          <View style={{ paddingVertical: 20 }}>
+            <Text style={{ fontSize: 16, textAlign: 'center' }}>
+              This is your modal content.
+            </Text>
+            <Button title="Close" onPress={handleCloseModal} />
+          </View>
+        )}
+    />
 ```
+     Example with custom header 
 
-Then, and every time you update your native dependencies, run:
+```jsx
+      const CustomHeader = () => {
+        return (
+          <TextInput
+            placeholder="Enter something..."
+            style={{
+              height: 30,
+              borderWidth: 1,
+              borderColor: '#ccc',
+              borderRadius: 8,
+              paddingHorizontal: 10,
+            }}
+          />
+        );
+      };
 
-```sh
-bundle exec pod install
-```
+      <CustomModal
+        sheetCustomHeader={<CustomHeader />}
+        isModalVisible={isVisible}
+        onCloseModal={handleCloseModal}
+        showCloseButton={true}
+        renderModalContent={() => (
+          <View style={{ paddingVertical: 20 }}>
+            <Text style={{ fontSize: 16, textAlign: 'center' }}>
+              This is your modal content.
+            </Text>
+            <Button title="Close" onPress={handleCloseModal} />
+          </View>
+        )}
+      /> 
+  ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
 
-```sh
-# Using npm
-npm run ios
+## Props
 
-# OR using Yarn
-yarn ios
-```
+All the `Modal` props can be passed.
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+| **Prop**             | **Type**                                 | **Default**               | **Required** | **Description**                                                                |
+|----------------------|------------------------------------------|---------------------------|--------------|--------------------------------------------------------------------------------|
+| `isModalVisible`     | `boolean`                                | `false`                   |  Yes         | Controls the visibility of the modal.                                          |
+| `onCloseModal`       | `() => void`                             | `() => {}`                |  Yes         | Called when the modal or backdrop is pressed to close.                         |
+| `title`              | `string`                                 | `'Provide Sheet Title'`   |  No          | Title to show at the top of the modal. Ignored if `sheetCustomHeader` is used. |
+| `containerStyle`     | `StyleProp<ViewStyle>`                   | `{}`                      |  No          | Custom style for the inner modal sheet container.                              |
+| `backdropStyle`      | `StyleProp<ViewStyle>`                   | `{}`                      |  No          | Style applied to the semi-transparent backdrop.                                |
+| `animationType`      | `'none'` | `'slide'` | `'fade'`          | `'slide'`                 |  No          | Type of animation for the modal appearance.                                    |
+| `showCloseButton`    | `boolean`                                | `true`                    |  No          | Show or hide the close (X) icon in the modal header.                           |
+| `closeIconImage`     | `ImageSourcePropType`                    | `close_icon.png`          |  No          | Custom image source for the close icon.                                        |
+| `SheetHeaderStyle`   | `StyleProp<ViewStyle>`                   | `{}`                      |  No          | Style for the header container (title and close icon row).                     |
+| `titleStyle`         | `StyleProp<TextStyle>`                   | `{}`                      |  No          | Style for the title text inside the modal.                                     |
+| `sheetCustomHeader`  | `ReactNode`                              | `null`                    |  No          | Fully override the default header with a custom component.                     |
+| `renderModalContent` | `() => ReactNode`                        | `() => null`              |  No          | Function that returns the content rendered inside the modal body.              |
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
 
-## Step 3: Modify your app
 
-Now that you have successfully run the app, let's make changes!
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

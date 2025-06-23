@@ -1,3 +1,20 @@
 {
-  "extends": "@react-native/typescript-config"
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES2017",
+    "jsx": "react-native",
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "allowJs": false,
+    "noEmit": false,
+    "emitDeclarationOnly": false,
+   "typeRoots": ["src/types"]
+  },
+  "exclude": ["node_modules"]
 }
+
+
