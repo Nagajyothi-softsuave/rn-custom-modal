@@ -91,7 +91,7 @@ All the `Modal` props can be passed.
 | `title`              | `string`                                 | `'Provide Sheet Title'`   |  No          | Title to show at the top of the modal. Ignored if `sheetCustomHeader` is used. |
 | `containerStyle`     | `StyleProp<ViewStyle>`                   | `{}`                      |  No          | Custom style for the inner modal sheet container.                              |
 | `backdropStyle`      | `StyleProp<ViewStyle>`                   | `{}`                      |  No          | Style applied to the semi-transparent backdrop.                                |
-| `animationType`      | `'none'` | `'slide'` | `'fade'`          | `'slide'`                 |  No          | Type of animation for the modal appearance.                                    |
+| `animationType`      | `'none' | 'slide' | 'fade'`              | `'slide'`                 |  No          | Type of animation for the modal appearance.                                    |
 | `showCloseButton`    | `boolean`                                | `true`                    |  No          | Show or hide the close (X) icon in the modal header.                           |
 | `closeIconImage`     | `ImageSourcePropType`                    | `close_icon.png`          |  No          | Custom image source for the close icon.                                        |
 | `SheetHeaderStyle`   | `StyleProp<ViewStyle>`                   | `{}`                      |  No          | Style for the header container (title and close icon row).                     |
