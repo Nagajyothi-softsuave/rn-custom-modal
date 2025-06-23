@@ -4,6 +4,9 @@ The rn-custom-modal package provides a customizable and reusable CustomModal com
 
 # RNCustomModal Example
 
+<img src="https://github.com/Nagajyothi-softsuave/rn-custom-modal/blob/main/Demo.gif" width="360" />
+
+
 ## Installation
 
 Download the package with npm or yarn
