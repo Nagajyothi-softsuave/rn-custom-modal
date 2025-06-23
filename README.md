@@ -8,8 +8,9 @@ The rn-custom-modal package provides a customizable and reusable CustomModal com
 
 Download the package with npm or yarn
 
+## Using npm
+
 ```sh
-# Using npm
 npm i rn-custom-modal
 
 ```
