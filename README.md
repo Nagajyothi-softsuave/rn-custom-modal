@@ -10,7 +10,7 @@ The rn-custom-modal package provides a customizable and reusable CustomModal com
 
 ## Using sheetCustomHeader
 
-<img />
+<img src="https://github.com/softsuave-tech-matrix/rn-custom-modal/blob/main/Demo2.gif" width="360" />
 
 
 ## Installation
